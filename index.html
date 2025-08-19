@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Agendamento Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Agendamento Online</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Início</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Agendar</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li id="login-item"><a href="#">Login</a></li> <!-- Será usado depois -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Agende seu horário de forma rápida e fácil</h2>
+            <p>Escolha o serviço, selecione a data e horário disponível, e confirme seu agendamento.</p>
+            <button id="cta-button" class="btn-primary">Fazer Agendamento</button>
+        </section>
+
+        <section class="services">
+            <h2>Nossos Serviços</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Consulta Médica</h3>
+                    <p>Agende sua consulta com nossos especialistas</p>
+                    <button class="btn-secondary">Agendar</button>
+                </div>
+                <div class="service-card">
+                    <h3>Exames</h3>
+                    <p>Realize seus exames com comodidade</p>
+                    <button class="btn-secondary">Agendar</button>
+                </div>
+                <div class="service-card">
+                    <h3>Terapias</h3>
+                    <p>Sessões de fisioterapia e outras terapias</p>
+                    <button class="btn-secondary">Agendar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="booking-form hidden">
+            <h2>Fazer Agendamento</h2>
+            <form id="appointment-form">
+                <div class="form-group">
+                    <label for="service">Serviço:</label>
+                    <select id="service" required>
+                        <option value="">Selecione um serviço</option>
+                        <option value="consulta">Consulta Médica</option>
+                        <option value="exame">Exames</option>
+                        <option value="terapia">Terapias</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="date">Data:</label>
+                    <input type="date" id="date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="time">Horário:</label>
+                    <select id="time" required>
+                        <option value="">Selecione um horário</option>
+                        <!-- Os horários serão preenchidos via JavaScript -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">Seu Nome:</label>
+                    <input type="text" id="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                
+                <button type="submit" class="btn-primary">Confirmar Agendamento</button>
+            </form>
+        </section>
+
+        <section class="confirmation hidden">
+            <h2>Agendamento Confirmado!</h2>
+            <div id="appointment-details">
+                <!-- Detalhes do agendamento serão inseridos aqui -->
+            </div>
+            <button id="new-booking" class="btn-secondary">Fazer Novo Agendamento</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Portal de Agendamento Online. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/appointments.js"></script>
+</body>
+</html>
